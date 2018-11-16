@@ -1,0 +1,62 @@
+<ng-container *ngIf="showMainPanel">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Tasks</h1>
+      <p class="lead">Hey ! Welcome, orgnize your tasks here.</p> 
+      <hr class="my-4">
+  <p class="lead">
+    <button class="btn btn-primary btn-lg" (click)="showNewTaskPanel()">Create new task</button> or 
+    <a class="btn btn-primary btn-lg" href="#" role="button">Search Tasks</a>
+  </p>
+    </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="newPanelVisible">
+    <div>
+      <h1>{{newTask.title}}</h1>
+      <form>
+        <div class="form-group">
+          <label>
+            Title
+          </label>
+          <input type="text" class="form-control" placeholder="Enter task title" [(ngModel)]="newTask.title" name="tasktitle"/>
+        </div>
+        <div class="form-group">
+            <label>
+              Due date
+            </label>
+            <input type="date" class="form-control" [(ngModel)]="newTask.dueDate" name="taskduedate"/>
+        </div>
+        <div class="form-group">
+              <label>
+                Priority
+              </label>
+              <select class="form-control" [(ngModel)]="newTask.priority" name="taskpriority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+        </div>
+        <div class="form-group">
+            <label>
+              Status
+            </label>
+            <select class="form-control" [(ngModel)]="newTask.status" name="taskstatus">
+              <option value="Open">Open</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+      </div>
+        <div class="form-group">
+            <label>
+              Notes
+            </label>
+            <textarea class="form-control"></textarea>
+      </div>
+      <input type="submit" class="btn btn-primary" value="Save" (click)="saveNewTask();"/>&nbsp;
+      <button class="btn btn-default" (click)="hideNewTaskPanel()">Cancel</button>
+      </form>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="showSearchPanel">
+  </ng-container>

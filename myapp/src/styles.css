@@ -1,1 +1,13 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
 /* You can add global styles to this file, and also import other style files */
+h1 {
+color:blue;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+a.menu{
+color:black;
+padding:5px;
+background-color: blueviolet
+}
