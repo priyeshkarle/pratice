@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyApp.API.Security.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,32 +16,49 @@ namespace MyApp.API.Security
             _context.Dispose();
         }
 
-        public string GetNameByToken(string token)
+        public Task<string> GetNameByToken(string token)
         {
-            throw new NotImplementedException();
+            return System.Threading.Tasks.Task.Run<string>(async () => {
+                var user = _context.GlobalUsers.Where(t => t.Token.ToString() == token).FirstOrDefault();
+
+                if (user != null)
+                    return user.Name;
+                else
+                    return string.Empty;
+            });
+        }
+        
+        public Task<string> LogIn(string username, string password)
+        {
+            return System.Threading.Tasks.Task.Run<string>(async () => {
+                var user = _context.GlobalUsers.Where(g => g.Username == username && g.Password == password).FirstOrDefault();
+
+                if (user != null)
+                {
+                    Guid guid = Guid.NewGuid();
+
+                    user.Token = guid;
+                    await _context.SaveChangesAsync();
+                    return user.Token.ToString();
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            });
         }
 
-        public string GetUserIDByToken(string token)
+        public Task<GlobalUser> GetUser(string token)
         {
-            throw new NotImplementedException();
-        }
+            return System.Threading.Tasks.Task.Run<GlobalUser>(() => {
+                var user = _context.GlobalUsers.Where(t => t.Token.ToString() == token).FirstOrDefault();
 
-        public string LogIn(string username, string password)
-        {
-            var user = _context.GlobalUsers.Where(g => g.Username == username && g.Password == password).FirstOrDefault();
-
-            if (user != null)
-            {
-                Guid guid = Guid.NewGuid();
-
-                user.Token = guid;
-                _context.SaveChanges();
-                return user.Token.ToString();
-            }
-            else
-            {
-                return string.Empty;
-            }
+                if (user != null)
+                {
+                    return user;
+                }
+                else return null;
+            });
         }
     }
 }

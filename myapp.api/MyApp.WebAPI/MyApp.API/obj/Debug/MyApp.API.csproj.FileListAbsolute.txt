@@ -1,0 +1,12 @@
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\bin\Debug\MyApp.API.dll.config
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\bin\Debug\MyApp.API.dll
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\bin\Debug\MyApp.API.pdb
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\bin\Debug\EntityFramework.dll
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\bin\Debug\EntityFramework.SqlServer.dll
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\bin\Debug\EntityFramework.xml
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\bin\Debug\EntityFramework.SqlServer.xml
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\obj\Debug\MyApp.API.csprojAssemblyReference.cache
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\obj\Debug\MyApp.API.csproj.CoreCompileInputs.cache
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\obj\Debug\MyApp.API.csproj.CopyComplete
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\obj\Debug\MyApp.API.dll
+F:\Project\GitHub\pratice\myapp.api\MyApp.WebAPI\MyApp.API\obj\Debug\MyApp.API.pdb

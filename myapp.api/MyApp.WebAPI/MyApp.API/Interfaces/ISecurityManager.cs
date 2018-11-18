@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyApp.API.Security.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace MyApp.API.Interfaces
 {
-    public interface ISecurityManager
+    public interface ISecurityManager : IDisposable
     {
-        string LogIn(string username, string password);
-        string GetNameByToken(string token);
-        string GetUserIDByToken(string token);
+        Task<string> LogIn(string username, string password);
+        Task<string> GetNameByToken(string token);
+        Task<GlobalUser> GetUser(string token);
     }
 }

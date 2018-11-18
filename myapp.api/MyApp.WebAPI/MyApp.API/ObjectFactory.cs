@@ -5,6 +5,7 @@ using System.Linq;
 using MyApp.API.Security;
 using System.Text;
 using System.Threading.Tasks;
+using MyApp.API.Task;
 
 namespace MyApp.API
 {
@@ -15,6 +16,14 @@ namespace MyApp.API
             get
             {
                 return new SecurityManager();
+            }
+        }
+
+        public static ITaskManager TaskManager
+        {
+            get
+            {
+                return new TaskManager();
             }
         }
     }
